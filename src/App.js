@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 
 import Courses from './containers/Courses/Courses';
 import Course from './containers/Course/Course';
@@ -29,10 +29,11 @@ class App extends Component {
             </li>
          </ul>
         </nav>
-        {/* Can also use Switch for the following, but the first path should be last in that case */}
-        <Route path="/courses" exact component={Courses} />
-        <Route path="/users" component={Users} />
-        <Route path="/courses/:courseId" component={Course} />
+        <Switch>
+          <Route path="/users" component={Users} />
+          {/* <Route path="/courses/:courseId" component={Course} /> */}
+          <Route path="/courses" component={Courses} />
+        </Switch>
       </div>
     );
   }
