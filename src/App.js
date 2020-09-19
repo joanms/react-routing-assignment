@@ -32,7 +32,7 @@ class App extends Component {
         {/* Can also use Switch for the following, but the first path should be last in that case */}
         <Route path="/courses" exact component={Courses} />
         <Route path="/users" component={Users} />
-        <Route path="/courses/:courseId" component={Course} />
+        <Route path="/courses/:courseId/:courseTitle" component={Course} />
       </div>
     );
   }
